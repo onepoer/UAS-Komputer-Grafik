@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Settings Image</title>
+    <style>
+        /* Styles for a modern and stylish look */
+        body {
+            font-family: 'arial', sans-serif;
+            background-image: url("/static/sky.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #f9f5ff;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 25px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: fadein 1s;
+        }
+
+        form {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #f9f5ff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: slidein 1s;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 98%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #778da9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: white;
+            transition: color 0.5s;
+        }
+
+        /* Animation for a fade-in effect */
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Animation for a slide-in effect */
+        @keyframes slidein {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pengaturan Gambar</h1>
+    <form method="POST" action="/crop">
+        <label for="size">Size:</label>
+        <input type="text" name="size" id="size" placeholder="Width x Height"><br><br>
+
+        <label for="position">Position:</label>
+        <select name="position" id="position">
+            <option value="top left">Top Left</option>
+            <option value="top center">Top Center</option>
+            <option value="top right">Top Right</option>
+            <option value="center left">Center Left</option>
+            <option value="center">Center</option>
+            <option value="center right">Center Right</option>
+            <option value="bottom left">Bottom Left</option>
+            <option value="bottom center">Bottom Center</option>
+            <option value="bottom right">Bottom Right</option>
+        </select><br><br>
+
+        <img src="/static/alam.jpg" alt="Uploaded Image"><br>
+
+        <input type="submit" value="Crop">
+    </form>
+</body>
+
+<center><a href="{{ url_for('home') }}">Back</a>
+    </body>
+
+</html>

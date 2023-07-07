@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Purwanti</title>
+
+    <style>
+        /* Styles for a modern and stylish look */
+        body {
+            font-family: 'arial', sans-serif;
+            background-image: url("/static/sky.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #f9f5ff;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 50px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: fadein 1s;
+        }
+
+        h2 {
+            color: #f9f5ff;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 25px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: fadein 1s;
+        }
+
+        form {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #f9f5ff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: slidein 1s;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            border: none;
+            padding: 10px 0;
+        }
+
+        input[type="submit"] {
+            background-color: #778da9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        /* Animation for a fade-in effect */
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Animation for a slide-in effect */
+        @keyframes slidein {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Komputer Grafik</h1>
+    <h2>Upload Gambar Anda</h2>
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="image" id="file-upload"><br>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+
+</html>
